@@ -50,7 +50,7 @@ public class RealTimeFragment extends Fragment {
 
     private void LoadIpCam(){
         Mjpeg.newInstance()
-                .open("http://118.200.147.223:60001/mjpeg", TIMEOUT)
+                .open("http://138.75.179.94:8081/video.mjpg", TIMEOUT)
                 .subscribe(inputStream -> {
                     mjpegView.setSource(inputStream); // null object reference means that you were trying to call a method on something that didnt exist. Right forgot about that R thingy
                     mjpegView.setDisplayMode(calculateDisplayMode());

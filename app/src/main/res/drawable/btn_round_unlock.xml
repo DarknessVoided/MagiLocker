@@ -7,5 +7,4 @@
             <size android:width="150dp" android:height="150dp"/>
         </shape>
     </item>
-
 </selector>

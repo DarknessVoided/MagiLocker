@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,24 +70,77 @@ public class LockFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        if (btnLock.getText().equals("Enable")){
+            view.setEnabled(false);
             Log.i("TEST", " Making network request");
             OkHttpClient client = new OkHttpClient();
             // try running it now? wiat
             // GET request
             Request request = new Request.Builder()
-                    .url("http://magilock.epizy.com/ChangeStatus.php?lock=0")
+                    .url("https://ayl.daniel-stone.uk/MagiLock/ChangeStatus.php?lock=0")
                     .build();
             client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
-                    Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
+                    Log.i("Error Message", e.getMessage());
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            view.setEnabled(true);
+                        }
+                    });
                 }
-
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
-                    Toast.makeText(getActivity(), response.body().toString(), Toast.LENGTH_SHORT).show();
-
+                    if (response.message().equals("OK")){
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                txtStatus.setText("Status: Unlock");
+                                btnLock.setText("Disable");
+                                btnLock.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.btn_round_unlock));
+                                view.setEnabled(true);
+                            }
+                        });
+                    }
                 }
             });
+        }
+        else {
+            view.setEnabled(false);
+            Log.i("TEST", " Making network request");
+            OkHttpClient client = new OkHttpClient();
+            // GET request
+            Request request = new Request.Builder()
+                    .url("https://ayl.daniel-stone.uk/MagiLock/ChangeStatus.php?lock=1")
+                    .build();
+            client.newCall(request).enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
+                    Log.i("Error Message", e.getMessage());
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            view.setEnabled(true);
+                        }
+                    });
+                }
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                    Log.i("Sucess message", response.message().toString());
+                    if (response.message().equals("OK")){
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                txtStatus.setText("Status: Lock");
+                                btnLock.setText("Enable");
+                                btnLock.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.btn_round_lock));
+                                view.setEnabled(true);
+                            }
+                        });
+                    }
+                }
+            });
+        }
     }
 }
