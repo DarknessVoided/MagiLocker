@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelog bulletedList="true">
+
+    <changelogversion versionName="1.0" changeDate="December 2,2017">
+        <changelogtext>Beta release.</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="0.9" changeDate="January 24,2018">
+        <changelogtext>[b]New![/b] Ability to look through lock via phone.</changelogtext>
+        <changelogtext>Created Blog Fragment</changelogtext>
+        <changelogtext>Added support to lock/unlock on the fly!</changelogtext>
+        <changelogtext>Added Share feature</changelogtext>
+    </changelogversion>
+
+</changelog>

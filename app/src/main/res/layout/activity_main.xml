@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    tools:context="buttersmart.magilock.MainActivity"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36sp"
+            android:textColor="@android:color/white"
+            android:text="M A G I L O C K"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Presents"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The search for Simplicity"
+        android:id="@+id/txtRiderApp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="12dp"
+        android:textAlignment="center"
+        android:textColor="@color/bottomText"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_above="@id/txtRiderApp"
+        android:layout_margin="16dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sign in"
+            android:layout_marginRight="6dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/btn_sign_in_background"
+            />
+        
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:background="@drawable/btn_register_background"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:textColor="@color/btnRegister"
+            android:text="Register"
+            android:layout_weight="1"/>
+
+
+        
+    </LinearLayout>
+
+</RelativeLayout>

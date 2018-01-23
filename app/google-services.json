@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "176770483191",
+    "firebase_url": "https://magilock-97c02.firebaseio.com",
+    "project_id": "magilock-97c02",
+    "storage_bucket": "magilock-97c02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176770483191:android:26e605a95f6e3fbf",
+        "android_client_info": {
+          "package_name": "buttersmart.magilock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176770483191-6btneoijcstb29au9hdlkputdbdtvq46.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "buttersmart.magilock",
+            "certificate_hash": "aa5ef4ab92be226108124870942506c6c392e9ac"
+          }
+        },
+        {
+          "client_id": "176770483191-b0i57jvtmoe28cl31apjq18nb7sjim0n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "buttersmart.magilock",
+            "certificate_hash": "6ae10e1396edc7b6e723fff43d43f6e8ac831d2b"
+          }
+        },
+        {
+          "client_id": "176770483191-qu9mbshrk48dhjpkkroip37fjkbem14a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7S2KCS35IKTNmLyaRQmvHPPQdXvCEQTk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176770483191-qu9mbshrk48dhjpkkroip37fjkbem14a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

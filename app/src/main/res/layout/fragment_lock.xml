@@ -1,0 +1,31 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="buttersmart.magilock.LockFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+        <Button
+            android:id="@+id/btnLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_round"
+            android:text="Enabled" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: Unlock"
+            android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+            android:id="@+id/txtStatus"
+            android:layout_above="@id/btnLock"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</FrameLayout>
