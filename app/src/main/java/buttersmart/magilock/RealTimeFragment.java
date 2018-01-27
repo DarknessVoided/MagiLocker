@@ -50,12 +50,16 @@ public class RealTimeFragment extends Fragment {
 
     private void LoadIpCam(){
         Mjpeg.newInstance()
-                .open("http://138.75.179.94:8081/video.mjpg", TIMEOUT)
+                .open("http://172.27.177.204:8081/video.mjpg", TIMEOUT)
                 .subscribe(inputStream -> {
                     mjpegView.setSource(inputStream); // null object reference means that you were trying to call a method on something that didnt exist. Right forgot about that R thingy
                     mjpegView.setDisplayMode(calculateDisplayMode());
                     mjpegView.showFps(true);
-                });
+                }, throwable -> {
+                    //Handling exception here.
+                    Log.e(getClass().getSimpleName(), "mjpeg error", throwable);
+                    Toast.makeText(getActivity(), "An error occured. Probably internet issues.", Toast.LENGTH_SHORT).show();
+                        });
     }
 
     private DisplayMode calculateDisplayMode() {
